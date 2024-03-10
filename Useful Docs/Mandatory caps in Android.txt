@@ -1,0 +1,20 @@
+Mandatory capabilities in Android
+
+Just to create a session with mobile
+1. platformName --> Android
+2. automationName --> UiAutomator2
+3. deviceName --> Anything of your choice (optional but recommeded)
+
+Create a session with mobile and install & run the app that I provide
+1. platformName --> Android
+2. automationName --> UiAutomator2
+3. app --> Entire path of the apk/aab file
+4. deviceName --> Anything of your choice (optional but recommeded)
+
+Create a session with mobile and run the app that is already installed
+1. platformName --> Android
+2. automationName --> UiAutomator2
+3. appPackage --> Name of the app given by the developer
+4. appActivity --> Screen name where I am given by the developer
+5. app --> Entire path of the apk/aab file (optional but recommended so the app can be upgraded/installed if needed)
+6. deviceName --> Anything of your choice (optional but recommeded)
