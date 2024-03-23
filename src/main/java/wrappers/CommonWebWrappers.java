@@ -46,7 +46,7 @@ public class CommonWebWrappers extends CommonNativeWrappers {
             }
             if (platformName.equalsIgnoreCase("Android")) {
                 dc.setCapability("automationName", "UiAutomator2");
-                driver = new AndroidDriver(new URI("http://0.0.0.0:4723").toURL(), dc);
+                driver = new AndroidDriver(new URI(serverURL).toURL(), dc);
             } else if (platformName.equalsIgnoreCase("iOS")) {
                 if (!webkitDebugProxyPort.equals(""))
                     dc.setCapability("webkitDebugProxyPort", webkitDebugProxyPort);
@@ -55,7 +55,7 @@ public class CommonWebWrappers extends CommonNativeWrappers {
                 dc.setCapability("startIWDP", true);
                 dc.setCapability("nativeWebTap", true);
                 dc.setCapability("automationName", "XCUITest");
-                driver = new IOSDriver(new URI("http://0.0.0.0:4723").toURL(), dc);
+                driver = new IOSDriver(new URI(serverURL).toURL(), dc);
             }
             driver.get(URL);
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));

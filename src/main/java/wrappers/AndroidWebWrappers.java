@@ -15,5 +15,4 @@ public class AndroidWebWrappers extends AndroidNativeWrappers {
         driver.manage().deleteAllCookies();
         return true;
     }
-
 }
