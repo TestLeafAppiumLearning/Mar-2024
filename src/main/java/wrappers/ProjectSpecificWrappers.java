@@ -23,8 +23,8 @@ public class ProjectSpecificWrappers extends GenericWrappers {
             "chromeDriverPort", "systemPort", "xcodeOrgId", "xcodeSigningId", "bundleId", "app", "mjpegServerPort",
             "wdaLocalPort"})
     @BeforeMethod
-    public void bm(String platformName, String deviceName, @Optional("") String udid, @Optional("") String appPackage,
-                   @Optional("") String appActivity, @Optional("") String automationName,
+    public void bm(String platformName, @Optional("") String deviceName, @Optional("") String udid,
+                   @Optional("") String appPackage, @Optional("") String appActivity, String automationName,
                    @Optional("") String chromeDriverPort, @Optional("") String systemPort, @Optional("") String xcodeOrgId,
                    @Optional("") String xcodeSigningId, @Optional("") String bundleId, @Optional("") String app,
                    @Optional("") String mjpegServerPort, @Optional("") String wdaLocalPort) {

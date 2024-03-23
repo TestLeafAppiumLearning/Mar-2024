@@ -29,9 +29,9 @@ import java.util.Set;
 
 public class CommonNativeWrappers extends ExtentReporter {
     public static final int MAX_SCROLL = 10;
+    public static String serverURL = "http://0.0.0.0:4723";
     public AppiumDriver driver;
     public boolean useExistingApp = true;
-    public String serverURL = "http://0.0.0.0:4723";
 
     // To launch the application (Native/Hybrid)
     public boolean launchApp(String platformName, String deviceName, String udid, String appPackage, String appActivity,
