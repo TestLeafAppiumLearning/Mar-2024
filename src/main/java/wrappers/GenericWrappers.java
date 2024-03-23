@@ -2,13 +2,13 @@ package wrappers;
 
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
-import org.testng.annotations.Test;
 
 import java.io.File;
 
 public class GenericWrappers extends IosWebWrappers {
     AppiumServiceBuilder builder;
     AppiumDriverLocalService service;
+
     public void startAppiumServer() {
         builder = new AppiumServiceBuilder();
         builder.usingAnyFreePort();
