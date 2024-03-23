@@ -30,8 +30,8 @@ import java.util.Set;
 public class CommonNativeWrappers extends AbstractTestNGCucumberTests {
     public static final int MAX_SCROLL = 10;
     public static ThreadLocal<AppiumDriver> driver = new ThreadLocal<AppiumDriver>();
+    public static String serverURL = "http://0.0.0.0:4723";
     public boolean useExistingApp = true;
-    public String serverURL = "http://0.0.0.0:4723";
 
     public static synchronized AppiumDriver getDriver() {
         return driver.get();
