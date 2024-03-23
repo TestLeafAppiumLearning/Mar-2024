@@ -1,0 +1,64 @@
+Cucumber
+Rules
+1. Feature file 
+2. Feature files --> steps
+3. Step should be defined
+
+Cucumber --> Project
+src/main/java
+	stepDef
+		StepDef.java
+			public static AppiumDriver driver;
+			launchApp()....
+			click()....
+			verifyText(.....
+			@Given("the application is launched")
+			public void a() {
+				launchapp(....)
+			}
+			@Given("I enter the username as {string}")
+				public void b(String a) {
+				enterText(....,a);
+			}
+			@Given("I enter the password as {string}")
+				public void c(String a) {
+				enterText(....,a);
+			}
+			@Given("I click the login button")
+			public void d() {
+				click();
+			}
+			@Given("Verify Home page is displayed")
+			public void e() {
+				verifytext(....
+			}
+
+src/main/resources
+src/test/java
+	runner
+		TestRunner.java
+		@CucumberOptions(features={"src/test/resources/features"},
+					glue={"stepDef"})
+		public class TestRunner extends AbstractTestNgCucumberTests{}
+src/test/resources
+	features
+		Login.feature <name of the file>
+			Feature: <Feature Name>
+			Scenario: <TC Name>
+			Given --> Pre conditions
+			When --> Actual step that needs to be executed
+			Then --> Expected result
+			And --> supporting keyword for others
+			But --> Expected result for negative cases
+			* --> Wild card (any)
+
+		Login.feature
+			Feature: Login to the app
+			Scenario: Login to the app successfully
+			Given the application is launched
+			When I enter the username as "...."
+			And I enter the password as "...."
+			And I click the login button
+			Then Verify Home page is displayed
+
+		

@@ -1,0 +1,133 @@
+Page Object Model
+
+Rules
+1. Every page should be a separate class
+2. Every page should extends to a reusable method/class
+3. I should have a class which contains the reusable methods
+4. Every action should be a separate method
+5. Every method should have a return type and it should return to the page it lands post completion of that method
+6. Verify the page it has been landed
+
+Cucumber
+Rules
+1. Feature file 
+2. Feature files --> steps
+3. Step should be defined
+
+Maven Project
+
+Simple Maven project
+src/main/java --> actual files/methods that would be executed
+src/main/resources --> supporting files for data in src/main/java
+src/test/java --> test cases that needs to be executed
+src/test/resources --> supporting files for data in src/test/java
+
+POM --> Project
+src/main/java
+	wrappers
+		GenericWrappers.java extends AbstractTestNgCucumberTests
+			public static ThreadLocal<AppiumDriver> driver = new ThreadLocal<AppiumDriver>();
+
+			launchApp(driver.set(.....))....
+			click(driver.get().findelement.....)...
+			sendKeys().....
+		
+	pages
+		LoginPage.java extends GenericWrappers.java
+			public LoginPage() {
+				verifyText() / currentActivity or any thing that is unique in that page
+			}
+			@Given("I enter the username as {string}")
+			public LoginPage enterUn(String a) {
+				sendKeys(.....,a
+				return this;
+			}
+			@Given("I enter the password as {string}")	
+			public LoginPage enterPwd(String b) {
+				sendKeys(.....,b
+				return this;
+			}
+			@Given("I click the login button for negative cases")
+			public LoginPage clickLoginForFailure() {
+				click().....
+				return this;
+			}
+			@Given("I click the login button")
+			public HomePage clickLogin() {
+				click().....
+				return new HomePage();
+			}
+		HomePage.java extends GenericWrappers.java
+			public HomePage() {
+				verifyText() / currentActivity or any thing that is unique in that page
+			}
+			@Given("Verify Home page is displayed")
+			public HomePage verifyUsersName() {
+				verifyText().......
+				return this;
+			}
+ 
+src/main/resources
+src/test/java
+	runner
+		TestRunner.java
+		@CucumberOptions(features={"src/test/resources/features"},
+					glue={"pages"})
+		public class TestRunner extends GenericWrappers {
+			@BeforeMethod
+			public void bm() {
+				launchApp(.....);
+			}
+
+		}
+src/test/resources
+	features
+		Login.feature <name of the file>
+			Feature: <Feature Name>
+			Scenario: <TC Name>
+			Given --> Pre conditions
+			When --> Actual step that needs to be executed
+			Then --> Expected result
+			And --> supporting keyword for others
+			But --> Expected result for negative cases
+			* --> Wild card (any)
+
+		Login.feature
+			Feature: Login to the app
+			Scenario: Login to the app successfully
+			When I enter the username as "...."
+			And I enter the password as "...."
+			And I click the login button
+			Then Verify Home page is displayed
+
+
+
+
+testng.xml
+
+<suite>
+	<test.....
+		<classes>
+			<class....
+				<methods>
+					<method...
+				</methods>
+			</class>
+			<class.......
+		</classes>
+	</test>
+</suite>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

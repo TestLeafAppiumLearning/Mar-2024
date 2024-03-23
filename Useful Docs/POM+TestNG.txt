@@ -1,0 +1,112 @@
+Page Object Model
+
+Rules
+1. Every page should be a separate class
+2. Every page should extends to a reusable method/class
+3. I should have a class which contains the reusable methods
+4. Every action should be a separate method
+5. Every method should have a return type and it should return to the page it lands post completion of that method
+6. Verify the page it has been landed
+
+Maven Project
+
+Simple Maven project
+src/main/java --> actual files/methods that would be executed
+src/main/resources --> supporting files for data in src/main/java
+src/test/java --> test cases that needs to be executed
+src/test/resources --> supporting files for data in src/test/java
+
+POM --> Project
+src/main/java
+	wrappers
+		GenericWrappers.java
+			public static AppiumDriver driver;
+			launchApp()....
+			click()...
+			sendKeys().....
+		ProjectSpecificWrappers.java extends GenericWrappers.java
+			@BeforeMethod
+			public void bm() {
+				launchApp(.....);
+			}
+	pages
+		LoginPage.java extends GenericWrappers.java
+			public LoginPage(AppiumDriver driver) {
+				this.driver = driver;
+				verifyText() / currentActivity or any thing that is unique in that page
+			}
+			public LoginPage enterUn() {
+				sendKeys().....
+				return this;
+			}
+			public LoginPage enterPwd() {
+				sendKeys().....
+				return this;
+			}
+			public LoginPage clickLoginForFailure() {
+				click().....
+				return this;
+			}
+			public HomePage clickLogin() {
+				click().....
+				return new HomePage();
+			}
+		HomePage.java extends GenericWrappers.java
+			public HomePage(AppiumDriver driver) {
+				this.driver = driver;
+				verifyText() / currentActivity or any thing that is unique in that page
+			}
+			public HomePage verifyUsersName() {
+				verifyText().......
+				return this;
+			}
+ 
+src/main/resources
+src/test/java
+	testCases
+		TC001.java extends ProjectSpecificWrappers.java 
+			import *;
+			@Test
+			public void runMyScript() {
+				new LoginPage(driver).enterUn().enterPwd().clickLogin().verifyUsersName();
+			}
+		TC002.java extends ProjectSpecificWrappers.java 
+			import *;
+			@Test
+			public void runMyScript() {
+				new LoginPage(driver).enterUn().enterPwd().clickLogin().verifyUsersName();
+			}
+src/test/resources
+
+
+
+
+
+testng.xml
+
+<suite>
+	<test.....
+		<classes>
+			<class....
+				<methods>
+					<method...
+				</methods>
+			</class>
+			<class.......
+		</classes>
+	</test>
+</suite>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
