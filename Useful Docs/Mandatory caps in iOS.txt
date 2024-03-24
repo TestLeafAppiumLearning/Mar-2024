@@ -1,0 +1,69 @@
+Mandatory capabilities in Android for Sequential execution
+
+Just to create a session with mobile
+1. platformName --> Android
+2. automationName --> UiAutomator2
+3. deviceName --> Anything of your choice (optional but recommended)
+
+Create a session with mobile and install & run the app that I provide
+1. platformName --> Android
+2. automationName --> UiAutomator2
+3. app --> Entire path of the apk/aab file
+4. deviceName --> Anything of your choice (optional but recommended)
+
+Create a session with mobile and run the app that is already installed
+1. platformName --> Android
+2. automationName --> UiAutomator2
+3. appPackage --> Name of the app given by the developer
+4. appActivity --> Screen name where I am given by the developer
+5. app --> Entire path of the apk/aab file (optional but recommended so the app can be upgraded/installed if needed)
+6. deviceName --> Anything of your choice (optional but recommended)
+
+Just to create a session with mobile and launch chrome browser
+1. platformName --> Android
+2. automationName --> UiAutomator2
+3. browserName --> Chrome
+4. deviceName --> Anything of your choice (optional but recommended)
+
+Mandatory capabilities in Android for parallel execution
+
+Just to create a session with mobile
+1. platformName --> Android
+2. automationName --> UiAutomator2
+3. deviceName --> Anything of your choice (optional but recommended)
+4. systemPort --> UiAutomator Client port which should be unique for each device
+5. chromedriverPort --> mandatory only if my app is a hybrid app
+6. mjpegServerPort --> mandatory only if there is a screenshot or video captured during the session
+7. udid --> Unique Device IDentifier of the specific device (mandatory for local execution)
+
+Create a session with mobile and install & run the app that I provide
+1. platformName --> Android
+2. automationName --> UiAutomator2
+3. app --> Entire path of the apk/aab file
+4. deviceName --> Anything of your choice (optional but recommended)
+5. systemPort --> UiAutomator Client port which should be unique for each device
+6. chromedriverPort --> mandatory only if my app is a hybrid app
+7. mjpegServerPort --> mandatory only if there is a screenshot or video captured during the session
+8. udid --> Unique Device IDentifier of the specific device (mandatory for local execution)
+
+Create a session with mobile and run the app that is already installed
+1. platformName --> Android
+2. automationName --> UiAutomator2
+3. appPackage --> Name of the app given by the developer
+4. appActivity --> Screen name where I am given by the developer
+5. app --> Entire path of the apk/aab file (optional but recommended so the app can be upgraded/installed if needed)
+6. deviceName --> Anything of your choice (optional but recommended)
+7. systemPort --> UiAutomator Client port which should be unique for each device
+8. chromedriverPort --> mandatory only if my app is a hybrid app
+9. mjpegServerPort --> mandatory only if there is a screenshot or video captured during the session
+10. udid --> Unique Device IDentifier of the specific device (mandatory for local execution)
+
+Just to create a session with mobile and launch chrome browser
+1. platformName --> Android
+2. automationName --> UiAutomator2
+3. browserName --> Chrome
+4. deviceName --> Anything of your choice (optional but recommended)
+5. systemPort --> UiAutomator Client port which should be unique for each device
+6. chromedriverPort --> mandatory
+7. mjpegServerPort --> mandatory only if there is a screenshot or video captured during the session
+8. udid --> Unique Device IDentifier of the specific device (mandatory for local execution)
