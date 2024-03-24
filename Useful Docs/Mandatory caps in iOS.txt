@@ -1,34 +1,38 @@
-Mandatory capabilities in Android for Sequential execution
+Mandatory capabilities in iOS for Sequential execution
 
 Just to create a session with mobile
-1. platformName --> Android
-2. automationName --> UiAutomator2
-3. deviceName --> Anything of your choice (optional but recommended)
+1. platformName --> iOS
+2. automationName --> XCUITest
+3. deviceName --> Anything of your choice (optional but recommended to identify the simulator)
+4. udid --> Unique Device IDentifier of the specific device (optional but recommended to specify the exact device to test)
 
 Create a session with mobile and install & run the app that I provide
-1. platformName --> Android
-2. automationName --> UiAutomator2
-3. app --> Entire path of the apk/aab file
-4. deviceName --> Anything of your choice (optional but recommended)
+1. platformName --> iOS
+2. automationName --> XCUITest
+3. app --> Entire path of the ipa/app file
+4. deviceName --> Anything of your choice (optional but recommended to identify the simulator)
+5. udid --> Unique Device IDentifier of the specific device (optional but recommended to specify the exact device to test)
 
 Create a session with mobile and run the app that is already installed
-1. platformName --> Android
-2. automationName --> UiAutomator2
-3. appPackage --> Name of the app given by the developer
-4. appActivity --> Screen name where I am given by the developer
-5. app --> Entire path of the apk/aab file (optional but recommended so the app can be upgraded/installed if needed)
-6. deviceName --> Anything of your choice (optional but recommended)
+1. platformName --> iOS
+2. automationName --> XCUITest
+3. bundleID --> Bundle Identifier of the app that needs to be launched (usually provided by developer)
+4. deviceName --> Anything of your choice (optional but recommended to identify the simulator)
+5. udid --> Unique Device IDentifier of the specific device (optional but recommended to specify the exact device to test)
+6. app --> Entire path of the ipa/app file (optional if available)
 
-Just to create a session with mobile and launch chrome browser
-1. platformName --> Android
-2. automationName --> UiAutomator2
-3. browserName --> Chrome
+<Below to be fixed later>
+
+Just to create a session with mobile and launch safari browser
+1. platformName --> iOS
+2. automationName --> XCUITest
+3. browserName --> Safari
 4. deviceName --> Anything of your choice (optional but recommended)
 
 Mandatory capabilities in Android for parallel execution
 
 Just to create a session with mobile
-1. platformName --> Android
+1. platformName --> iOS
 2. automationName --> UiAutomator2
 3. deviceName --> Anything of your choice (optional but recommended)
 4. systemPort --> UiAutomator Client port which should be unique for each device
@@ -37,7 +41,7 @@ Just to create a session with mobile
 7. udid --> Unique Device IDentifier of the specific device (mandatory for local execution)
 
 Create a session with mobile and install & run the app that I provide
-1. platformName --> Android
+1. platformName --> iOS
 2. automationName --> UiAutomator2
 3. app --> Entire path of the apk/aab file
 4. deviceName --> Anything of your choice (optional but recommended)
@@ -47,7 +51,7 @@ Create a session with mobile and install & run the app that I provide
 8. udid --> Unique Device IDentifier of the specific device (mandatory for local execution)
 
 Create a session with mobile and run the app that is already installed
-1. platformName --> Android
+1. platformName --> iOS
 2. automationName --> UiAutomator2
 3. appPackage --> Name of the app given by the developer
 4. appActivity --> Screen name where I am given by the developer
@@ -59,7 +63,7 @@ Create a session with mobile and run the app that is already installed
 10. udid --> Unique Device IDentifier of the specific device (mandatory for local execution)
 
 Just to create a session with mobile and launch chrome browser
-1. platformName --> Android
+1. platformName --> iOS
 2. automationName --> UiAutomator2
 3. browserName --> Chrome
 4. deviceName --> Anything of your choice (optional but recommended)
