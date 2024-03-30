@@ -5,6 +5,8 @@ Just to create a session with mobile
 2. automationName --> XCUITest
 3. deviceName --> Anything of your choice (optional but recommended to identify the simulator)
 4. udid --> Unique Device IDentifier of the specific device (optional but recommended to specify the exact device to test)
+5. xcodeOrgId --> Team Id of the developer (can be identified from Certificate or got from Developer --> Recommended if the WDA and App developer are different)
+6. xcodeSigningId --> iPhone Developer (Recommended if the WDA and App developer are different)
 
 Create a session with mobile and install & run the app that I provide
 1. platformName --> iOS
@@ -12,62 +14,74 @@ Create a session with mobile and install & run the app that I provide
 3. app --> Entire path of the ipa/app file
 4. deviceName --> Anything of your choice (optional but recommended to identify the simulator)
 5. udid --> Unique Device IDentifier of the specific device (optional but recommended to specify the exact device to test)
+6. xcodeOrgId --> Team Id of the developer (can be identified from Certificate or got from Developer --> Recommended if the WDA and App developer are different)
+7. xcodeSigningId --> iPhone Developer (Recommended if the WDA and App developer are different)
 
 Create a session with mobile and run the app that is already installed
 1. platformName --> iOS
 2. automationName --> XCUITest
-3. bundleID --> Bundle Identifier of the app that needs to be launched (usually provided by developer)
+3. bundleId --> Bundle Identifier of the app that needs to be launched (usually provided by developer)
 4. deviceName --> Anything of your choice (optional but recommended to identify the simulator)
 5. udid --> Unique Device IDentifier of the specific device (optional but recommended to specify the exact device to test)
 6. app --> Entire path of the ipa/app file (optional if available)
-
-<Below to be fixed later>
+7. xcodeOrgId --> Team Id of the developer (can be identified from Certificate or got from Developer --> Recommended if the WDA and App developer are different)
+8. xcodeSigningId --> iPhone Developer (Recommended if the WDA and App developer are different)
 
 Just to create a session with mobile and launch safari browser
 1. platformName --> iOS
 2. automationName --> XCUITest
 3. browserName --> Safari
-4. deviceName --> Anything of your choice (optional but recommended)
+4. deviceName --> Anything of your choice (optional but recommended to identify the simulator)
+5. udid --> Unique Device IDentifier of the specific device (optional but recommended to specify the exact device to test)
+6. xcodeOrgId --> Team Id of the developer (can be identified from Certificate or got from Developer --> Recommended if the WDA and App developer are different)
+7. xcodeSigningId --> iPhone Developer (Recommended if the WDA and App developer are different)
 
-Mandatory capabilities in Android for parallel execution
+Mandatory capabilities in iOS for parallel execution
 
 Just to create a session with mobile
 1. platformName --> iOS
-2. automationName --> UiAutomator2
-3. deviceName --> Anything of your choice (optional but recommended)
-4. systemPort --> UiAutomator Client port which should be unique for each device
-5. chromedriverPort --> mandatory only if my app is a hybrid app
+2. automationName --> XCUITest
+3. deviceName --> Anything of your choice (optional but recommended to identify the simulator)
+4. wdaLocalPort --> UiAutomation Server port which should be unique for each device
+5. webkitDebugProxyPort --> mandatory only if my app is a hybrid/Mobile web app
 6. mjpegServerPort --> mandatory only if there is a screenshot or video captured during the session
-7. udid --> Unique Device IDentifier of the specific device (mandatory for local execution)
+7. udid --> Unique Device IDentifier of the specific device (optional but recommended to specify the exact device to test)
+8. xcodeOrgId --> Team Id of the developer (can be identified from Certificate or got from Developer --> Recommended if the WDA and App developer are different)
+9. xcodeSigningId --> iPhone Developer (Recommended if the WDA and App developer are different)
 
 Create a session with mobile and install & run the app that I provide
 1. platformName --> iOS
-2. automationName --> UiAutomator2
-3. app --> Entire path of the apk/aab file
-4. deviceName --> Anything of your choice (optional but recommended)
-5. systemPort --> UiAutomator Client port which should be unique for each device
-6. chromedriverPort --> mandatory only if my app is a hybrid app
+2. automationName --> XCUITest
+3. app --> Entire path of the ipa/app file
+4. deviceName --> Anything of your choice (optional but recommended to identify the simulator)
+5. wdaLocalPort --> UiAutomation Server port which should be unique for each device
+6. webkitDebugProxyPort --> mandatory only if my app is a hybrid/Mobile web app
 7. mjpegServerPort --> mandatory only if there is a screenshot or video captured during the session
-8. udid --> Unique Device IDentifier of the specific device (mandatory for local execution)
+8. udid --> Unique Device IDentifier of the specific device (optional but recommended to specify the exact device to test)
+9. xcodeOrgId --> Team Id of the developer (can be identified from Certificate or got from Developer --> Recommended if the WDA and App developer are different)
+10. xcodeSigningId --> iPhone Developer (Recommended if the WDA and App developer are different)
 
 Create a session with mobile and run the app that is already installed
 1. platformName --> iOS
-2. automationName --> UiAutomator2
-3. appPackage --> Name of the app given by the developer
-4. appActivity --> Screen name where I am given by the developer
-5. app --> Entire path of the apk/aab file (optional but recommended so the app can be upgraded/installed if needed)
-6. deviceName --> Anything of your choice (optional but recommended)
-7. systemPort --> UiAutomator Client port which should be unique for each device
-8. chromedriverPort --> mandatory only if my app is a hybrid app
-9. mjpegServerPort --> mandatory only if there is a screenshot or video captured during the session
-10. udid --> Unique Device IDentifier of the specific device (mandatory for local execution)
+2. automationName --> XCUITest
+3. bundleId --> Bundle Identifier of the app that needs to be launched (usually provided by developer)
+4. app --> Entire path of the ipa/app file (optional but recommended if app is not installed)
+5. deviceName --> Anything of your choice (optional but recommended to identify the simulator)
+6. wdaLocalPort --> UiAutomation Server port which should be unique for each device
+7. webkitDebugProxyPort --> mandatory only if my app is a hybrid/Mobile web app
+8. mjpegServerPort --> mandatory only if there is a screenshot or video captured during the session
+9. udid --> Unique Device IDentifier of the specific device (optional but recommended to specify the exact device to test)
+10. xcodeOrgId --> Team Id of the developer (can be identified from Certificate or got from Developer --> Recommended if the WDA and App developer are different)
+11. xcodeSigningId --> iPhone Developer (Recommended if the WDA and App developer are different)
 
-Just to create a session with mobile and launch chrome browser
+Just to create a session with mobile and launch safari browser
 1. platformName --> iOS
-2. automationName --> UiAutomator2
-3. browserName --> Chrome
-4. deviceName --> Anything of your choice (optional but recommended)
-5. systemPort --> UiAutomator Client port which should be unique for each device
-6. chromedriverPort --> mandatory
-7. mjpegServerPort --> mandatory only if there is a screenshot or video captured during the session
-8. udid --> Unique Device IDentifier of the specific device (mandatory for local execution)
+2. automationName --> XCUITest
+3. browserName --> Safari
+4. deviceName --> Anything of your choice (optional but recommended to identify the simulator)
+5. udid --> Unique Device IDentifier of the specific device (optional but recommended to specify the exact device to test)
+6. wdaLocalPort --> UiAutomation Server port which should be unique for each device
+7. webkitDebugProxyPort --> mandatory only if my app is a hybrid/Mobile web app
+8. mjpegServerPort --> mandatory only if there is a screenshot or video captured during the session
+9. xcodeOrgId --> Team Id of the developer (can be identified from Certificate or got from Developer --> Recommended if the WDA and App developer are different)
+10. xcodeSigningId --> iPhone Developer (Recommended if the WDA and App developer are different)
